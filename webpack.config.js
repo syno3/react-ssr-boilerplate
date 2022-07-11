@@ -19,6 +19,16 @@ module.exports = {
           },
         },
       },
+      // new rule
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+      },
+      // new rule
+      {
+        test: /\.(png|jpg)$/,
+        use: [{loader:"url-loader"}]
+      }
     ],
   },
   plugins: [
