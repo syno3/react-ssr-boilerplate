@@ -1,11 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const uglifyjsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "main.js",
+  },
+  optimization: {
+    minimizer: [new uglifyjsPlugin()],
   },
   module: {
     rules: [
@@ -27,8 +31,8 @@ module.exports = {
       // new rule
       {
         test: /\.(png|jpg)$/,
-        use: [{loader:"url-loader"}]
-      }
+        use: [{ loader: "url-loader" }],
+      },
     ],
   },
   plugins: [
