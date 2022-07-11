@@ -1,9 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import App from "./app";
 
-export default function Test() {
-  return (
-    <>
-      <h3>Hello from next js</h3>
-    </>
-  );
-}
+ReactDOM.hydrate(<App />, document.getElementById("root"));
